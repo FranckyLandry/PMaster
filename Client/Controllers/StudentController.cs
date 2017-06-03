@@ -25,9 +25,10 @@ namespace Client.Controllers
         }
 
         // GET: Student/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Student/Create

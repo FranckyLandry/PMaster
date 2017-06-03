@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Client.Models;
+using Client.ViewModels;
 
 namespace Client.Controllers
 {
@@ -23,21 +24,23 @@ namespace Client.Controllers
             return View();
         }
 
+        [HttpGet]
         // GET: Course/Create
         public ActionResult Create()
         {
-            return View();
+            return View("CourseCreate");
         }
 
         // POST: Course/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CourseViewModel courseView)
         {
             try
             {
-                // TODO: Add insert logic here
+                ApiConnection conn = new ApiConnection();
+                conn.Create(courseView.Course);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("DisplayCourse");
             }
             catch
             {

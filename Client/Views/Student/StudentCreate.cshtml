@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model Client.ViewModels.StudentViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <title>StudentCreate</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Create", "Student", FormMethod.Post))
+    {
+
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Student.FirstName)</td>
+                <td>@Html.LabelFor(model => model.Student.)</td>*@
+            </tr>
+
+        </table>
+        
+
+    }
+
+</body>
+</html>

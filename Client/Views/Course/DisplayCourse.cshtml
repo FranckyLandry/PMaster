@@ -3,35 +3,68 @@
     ViewBag.Title = "DisplayCourse";
 }
 
-<h2>DisplayCourse</h2>
+<h2>Course Table</h2>
 
-meta name="viewport" content="width=device-width"/>
-<title>DisplayCourse</title>
+@*meta name="viewport" content="width=device-width"/>*@
+<title>CourseTable</title>
 <body>
-    <table cellpadding="2" cellspacing="2" border="1">
 
-        <tr>
-            <th>Course Identifier</th>
-            <th>Course Name</th>
-            <th>Course Submition</th>
-            <th>Cours Grade</th>
-            <th>Student Identifier</th>
+    @*<a href="@Url.Action("Create","Course","Course")">Upload Project</a>*@
+    <h3 class="text-info">@Html.ActionLink("Upload new Project", "Create", "Course")</h3>
+    <br/><br/>
 
-        </tr>
-        @foreach (var course in ViewBag.listcourses)
-        {
+    @*<table cellpadding="2" cellspacing="2" border="1">
 
             <tr>
-                <td>@course.CourseCode</td>
-                <td>@course.CourseName</td>
-                <td>@course.CourseSubmition</td>
-                <td>@course.CoursGrade</td>
-                <td>@course.PcnNumber</td>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Course File Path</th>
+                <th>Student Identifier</th>
 
-                <td>Delete | Edit</td>
             </tr>
-        }
+            @foreach (var course in ViewBag.listcourses)
+            {
+
+                <tr>
+                    <td>@course.CourseCode</td>
+                    <td>@course.CourseName</td>
+                    <td>@course.CourseFilePath</td>
+                    <td>@course.PcnNumber</td>
 
 
-    </table>
-</body>
+                </tr>
+            }
+
+
+        </table>*@
+
+
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Course File Path</th>
+                <th>Student Identifier</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="active">
+                @foreach (var course in ViewBag.listcourses) 
+
+                {
+                <tr>
+                    <td>@course.CourseCode</td>
+                    <td>@course.CourseName</td>
+                    <td>@course.CourseFilePath</td>
+                    <td>@course.PcnNumber</td>
+                </tr>
+                }
+              @*</tr>*@
+            </tbody>
+        </table>
+
+    </body>

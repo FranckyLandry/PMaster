@@ -16,9 +16,8 @@ namespace PMaster.Models
     {
         public int CourseCode { get; set; }
         public string CourseName { get; set; }
-        public string CourseSubmition { get; set; }
-        public decimal CoursGrade { get; set; }
         public int PcnNumber { get; set; }
+        public string CourseFilePath { get; set; }
     
         public virtual Student Student { get; set; }
     }

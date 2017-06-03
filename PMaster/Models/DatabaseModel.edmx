@@ -9,10 +9,9 @@
           <Key>
             <PropertyRef Name="CourseCode" />
           </Key>
-          <Property Name="CourseCode" Type="int" Nullable="false" />
+          <Property Name="CourseCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseName" Type="nchar" MaxLength="30" Nullable="false" />
-          <Property Name="CourseSubmition" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="CoursGrade" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CourseFilePath" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="PcnNumber" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Student">
@@ -53,10 +52,9 @@
           </Key>
           <Property Name="CourseCode" Type="Int32" Nullable="false" />
           <Property Name="CourseName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="CourseSubmition" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CoursGrade" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="PcnNumber" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Course_Student" FromRole="Course" ToRole="Student" />
+          <Property Name="CourseFilePath" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -96,10 +94,9 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="CanvasModel.Course">
               <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CourseFilePath" ColumnName="CourseFilePath" />
                 <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-                <ScalarProperty Name="CourseSubmition" ColumnName="CourseSubmition" />
-                <ScalarProperty Name="CoursGrade" ColumnName="CoursGrade" />
                 <ScalarProperty Name="PcnNumber" ColumnName="PcnNumber" />
               </MappingFragment>
             </EntityTypeMapping>

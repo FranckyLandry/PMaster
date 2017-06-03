@@ -1,0 +1,59 @@
+﻿
+@{
+    //Layout = null;
+    ViewBag.Title = "Display";
+}
+
+@model Client.ViewModels.CourseViewModel
+
+<!DOCTYPE html>
+
+
+<body>
+
+
+
+    @*<h2>@ViewBag.Title.</h2>*@
+
+    @using (Html.BeginForm(Html.BeginForm("Create", "Course", FormMethod.Post, new { @class = "form-horizontal", role = "form" })))
+    {
+
+
+        @*@Html.AntiForgeryToken()*@
+
+        <hr />
+        @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.CourseName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Course.CourseName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.PcnNumber, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Course.PcnNumber, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.CourseFilePath, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Course.CourseFilePath, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-link" value="Upload" />
+            </div>
+        </div>
+
+    }
+
+
+
+
+
+
+   
+</body>
+
